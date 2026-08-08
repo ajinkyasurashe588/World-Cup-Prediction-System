@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #101820, #1c2b39);
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.football-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.header p {
+    font-size: 17px;
+    color: #d0d7de;
+}
+
+.prediction-card {
+    background: white;
+    color: #222;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #1565c0;
+}
+
+.vs {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: -5px 0 20px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #1565c0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #b8c2cc;
+    font-size: 14px;
+}
+
+.result-card {
+    background: white;
+    color: #222;
+    border-radius: 20px;
+    padding: 45px 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.result-card .trophy {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.result-card h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.match {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.stage {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.winner-title {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.winner {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 15px;
+}
+
+.prediction-text {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1565c0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: #0d47a1;
+}
+
+.error {
+    color: #c62828;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* Prediction Probability Section */
+
+.probability-section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.probability-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.probability-row {
+    margin-bottom: 20px;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    font-size: 15px;
+}
+
+.probability-label strong {
+    font-weight: 700;
+}
+
+.probability-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.probability-fill {
+    height: 100%;
+    background: #1976d2;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}

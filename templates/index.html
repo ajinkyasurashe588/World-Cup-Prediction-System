@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FIFA World Cup Prediction System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="football-icon">⚽</div>
+
+            <h1>FIFA World Cup</h1>
+
+            <h2>Prediction System</h2>
+
+            <p>
+                Predict the result of a FIFA World Cup match
+                using Machine Learning.
+            </p>
+
+        </div>
+
+
+        <div class="prediction-card">
+
+            <form action="/predict" method="POST">
+
+                <!-- Home Team -->
+
+                <div class="form-group">
+
+                    <label for="home_team">
+                        🏠 Home Team
+                    </label>
+
+                    <select
+                        id="home_team"
+                        name="home_team"
+                        required>
+
+                        <option value="" disabled selected>
+                            Select Home Team
+                        </option>
+
+                        {% for team in home_teams %}
+
+                            <option value="{{ team }}">
+                                {{ team }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- VS -->
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <!-- Away Team -->
+
+                <div class="form-group">
+
+                    <label for="away_team">
+                        ✈️ Away Team
+                    </label>
+
+                    <select
+                        id="away_team"
+                        name="away_team"
+                        required>
+
+                        <option value="" disabled selected>
+                            Select Away Team
+                        </option>
+
+                        {% for team in away_teams %}
+
+                            <option value="{{ team }}">
+                                {{ team }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- Match Stage -->
+
+                <div class="form-group">
+
+                    <label for="stage">
+                        🏆 Match Stage
+                    </label>
+
+                    <select
+                        id="stage"
+                        name="stage"
+                        required>
+
+                        <option value="" disabled selected>
+                            Select Match Stage
+                        </option>
+
+                        {% for stage in stages %}
+
+                            <option value="{{ stage }}">
+                                {{ stage.replace("-", " ").title() }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- Predict Button -->
+
+                <button type="submit">
+
+                    🔮 Predict Winner
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="footer">
+
+            <p>
+                Powered by Random Forest Machine Learning
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="result-card">
+
+            {% if error %}
+
+                <div class="trophy">
+                    ⚠️
+                </div>
+
+                <h1>Error</h1>
+
+                <p class="error">
+                    {{ error }}
+                </p>
+
+                <a href="/" class="back-button">
+                    Try Again
+                </a>
+
+            {% else %}
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <h1>Prediction Result</h1>
+
+                <div class="match">
+
+                    {{ home_team }}
+
+                    <span> vs </span>
+
+                    {{ away_team }}
+
+                </div>
+
+                <div class="stage">
+
+                    Match Stage:
+                    <strong>{{ stage }}</strong>
+
+                </div>
+
+                <div class="winner-title">
+                    Predicted Winner
+                </div>
+
+                <div class="winner">
+
+                    {% if predicted_winner == "Draw" %}
+
+                        🤝 Draw
+
+                    {% else %}
+
+                        🏆 {{ predicted_winner }}
+
+                    {% endif %}
+
+                </div>
+
+                <p class="prediction-text">
+
+                    {{ prediction_text }}
+
+                </p>
+                
+                <!-- Prediction Probabilities -->
+
+<div class="probability-section">
+
+    <h2>Prediction Probabilities</h2>
+
+    <div class="probability-row">
+
+        <div class="probability-label">
+            <span>{{ home_team }} Win</span>
+            <strong>{{ home_win_probability }}%</strong>
+        </div>
+
+        <div class="probability-bar">
+            <div
+                class="probability-fill"
+                style="width: {{ home_win_probability }}%;">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="probability-row">
+
+        <div class="probability-label">
+            <span>Draw</span>
+            <strong>{{ draw_probability }}%</strong>
+        </div>
+
+        <div class="probability-bar">
+            <div
+                class="probability-fill"
+                style="width: {{ draw_probability }}%;">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="probability-row">
+
+        <div class="probability-label">
+            <span>{{ away_team }} Win</span>
+            <strong>{{ away_win_probability }}%</strong>
+        </div>
+
+        <div class="probability-bar">
+            <div
+                class="probability-fill"
+                style="width: {{ away_win_probability }}%;">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+                <a href="/" class="back-button">
+                    🔄 Predict Another Match
+                </a>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="footer">
+
+            <p>
+                FIFA World Cup Prediction System
+            </p>
+
+            <p>
+                Powered by Random Forest Machine Learning
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
